@@ -77,7 +77,8 @@ function App() {
     </form>
     <div className='results-container'>
     <h2>{user.name}</h2>
-   <img src={user.avatar_url} alt='avatar'/>
+    {user?<img src={user.avatar_url} alt='avatar'/>:null}
+   
  
   
     {repos.map(renderRepo)}
