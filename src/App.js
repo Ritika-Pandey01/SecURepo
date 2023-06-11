@@ -6,6 +6,7 @@ import RepoDetails from './RepoDetails';
 function App() {
   const [username,setUsername]=useState("");
   const [loading,setLoading]=useState(false);
+  const [user,setUser]=useState("");
   const [repos,setRepos]=useState([]);
   const [details,setDetails]=useState({});
   const [detailsLoading,setDetailsLoading]=useState(false);
@@ -13,6 +14,7 @@ function App() {
   function handleSubmit(e){
     e.preventDefault();
     searchRepos();
+    searchUser();
   }
 
   function searchRepos(){
@@ -23,6 +25,17 @@ function App() {
       }).then(res=>{
         setLoading(false);
         setRepos(res.data);
+      })
+  }
+
+  function searchUser(){
+    setLoading(true);
+    axios({
+        method:"get",
+        url:`https://api.github.com/users/${username}`,
+      }).then(res=>{
+        setLoading(false);
+        setUser(res.data);
       })
   }
 
@@ -52,6 +65,7 @@ function App() {
     <div className="page">
     <div className='landing-page-container'>
     <div className='left-side'>
+    <h1>SecURepo</h1>
     <form className='form'>
     <input
       className='input'
@@ -62,6 +76,10 @@ function App() {
     <button className='button' onClick={handleSubmit}>{loading?"Searching..":"Search"}</button>
     </form>
     <div className='results-container'>
+    <h2>{user.name}</h2>
+   <img src={user.avatar_url} alt='avatar'/>
+ 
+  
     {repos.map(renderRepo)}
 
     </div>

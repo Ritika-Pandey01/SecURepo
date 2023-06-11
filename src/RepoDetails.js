@@ -7,10 +7,8 @@ function RepoDetails({details,loading}){
 
     return(
         <div className="repo-details-container">
-        <div className="details-row">
-            <label className="label">Name:</label>
-            <span className="value">{details.name}</span>
-        </div>
+         <h3>Security Parameters :</h3>
+        
         <div className="details-row">
             <label className="label">Private:</label>
             <span className="value">{details.private==null?" ":details.private?"It's private":"Not private"}</span>
@@ -27,6 +25,8 @@ function RepoDetails({details,loading}){
             <label className="label">SignoffCommit:</label>
             <span className="value">{details.web_commit_signoff_required==null?"":details.web_commit_signoff_required?"Required":"Not Required"}</span>
         </div>
+
+        
 
         </div>
     );

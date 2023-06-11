@@ -20,6 +20,11 @@
   overflow-y: scroll;
 }
 
+.left-side h1 {
+  text-align: center;
+  color: aliceblue;
+}
+
 .left-side::-webkit-scrollbar {
   display: none;
 }
@@ -75,7 +80,22 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  /* margin-left: 20%; */
   align-items: center;
+}
+
+.results-container h2 {
+  color: white;
+
+}
+
+.results-container img {
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  border: 1px solid #EFF2F1;
+  margin-bottom: 40px;
+
 }
 
 .row {
@@ -92,7 +112,7 @@
 }
 
 .row>h2 {
-  color: #EFF2F1;
+  color: #c7c9cd;
   pointer-events: auto;
 }
 
@@ -114,14 +134,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .details-row {
-  height: 60px;
+  height: 10px;
   width: 70%;
   display: flex;
-  margin-top: 25px;
+  margin-top: 50px;
   align-items: center;
+}
+
+.repo-details-container h3 {
+  color: #EFF2F1;
+  margin-top: 30%;
+  text-align: center;
 }
 
 .label {
